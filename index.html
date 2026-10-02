@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="monetag" content="c8937233eb1c104198ca1b741792a492">
+
+    <title>My Video Site</title>
+    <meta name="description" content="Watch and share videos online">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: white;
+        }
+
+        header {
+            background: #181818;
+            padding: 18px 30px;
+            border-bottom: 1px solid #292929;
+        }
+
+        header h1 {
+            color: #ff3333;
+            font-size: 26px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .title {
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(100%, 280px), 1fr)
+            );
+            gap: 25px;
+        }
+
+        .video-card {
+            background: #181818;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            background: black;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .video-info p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 13px;
+            background: #ff3333;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .share-btn:hover {
+            opacity: 0.85;
+        }
+
+        .whatsapp {
+            background: #168c48;
+        }
+
+        .facebook {
+            background: #1877f2;
+        }
+
+        .copy-btn {
+            background: #333;
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .title {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 My Video Site</h1>
+    </header>
+
+    <main class="container">
+
+        <h2 class="title">Latest Videos</h2>
+
+        <div class="videos">
+
+            <!-- Video 1 -->
+            <article class="video-card">
+
+                <video controls preload="metadata" poster="photo1.png">
+                    <source src="video1.mp4" type="video/mp4">
+                    তোমার ব্রাউজার ভিডিওটি চালাতে পারছে না।
+                </video>
+
+                <div class="video-info">
+                    <h2>আমার প্রথম ভিডিও</h2>
+                    <p>My Video • 2026</p>
+
+                    <div class="share-buttons">
+                        <button class="share-btn"
+                            onclick="shareVideo('আমার প্রথম ভিডিও', 'video1.mp4')">
+                            🔗 Share
+                        </button>
+
+                        <button class="share-btn whatsapp"
+                            onclick="shareWhatsApp('আমার প্রথম ভিডিও', 'video1.mp4')">
+                            WhatsApp
+                        </button>
+
+                        <button class="share-btn facebook"
+                            onclick="shareFacebook('video1.mp4')">
+                            Facebook
+                        </button>
+
+                        <button class="share-btn copy-btn"
+                            onclick="copyVideoLink('video1.mp4')">
+                            📋 Copy Link
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video 2 -->
+            <article class="video-card">
+
+                <video controls preload="metadata" poster="photo2.png">
+                    <source src="video2.mp4" type="video/mp4">
+                    তোমার ব্রাউজার ভিডিওটি চালাতে পারছে না।
+                </video>
+
+                <div class="video-info">
+                    <h2>আমার দ্বিতীয় ভিডিও</h2>
+                    <p>My Video • 2026</p>
+
+                    <div class="share-buttons">
+                        <button class="share-btn"
+                            onclick="shareVideo('আমার দ্বিতীয় ভিডিও', 'video2.mp4')">
+                            🔗 Share
+                        </button>
+
+                        <button class="share-btn whatsapp"
+                            onclick="shareWhatsApp('আমার দ্বিতীয় ভিডিও', 'video2.mp4')">
+                            WhatsApp
+                        </button>
+
+                        <button class="share-btn facebook"
+                            onclick="shareFacebook('video2.mp4')">
+                            Facebook
+                        </button>
+
+                        <button class="share-btn copy-btn"
+                            onclick="copyVideoLink('video2.mp4')">
+                            📋 Copy Link
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 My Video Site
+    </footer>
+
+    <script>
+        // তোমার Redirect URL
+        const redirectUrl = 'https://omg10.com/4/11910204';
+
+        // একই ব্রাউজার ট্যাবে প্রথমবার Redirect,
+        // পরেরবার ভিডিও চলবে।
+        document.querySelectorAll('video').forEach(function(video) {
+
+            video.addEventListener('play', function() {
+
+                const redirectKey = 'video_redirect_' +
+                    window.location.pathname;
+
+                try {
+                    if (!sessionStorage.getItem(redirectKey)) {
+
+                        // Redirect-এর আগে চিহ্ন সংরক্ষণ
+                        sessionStorage.setItem(redirectKey, 'done');
+
+                        // প্রথমবার বাইরের লিংকে যাওয়া
+                        window.location.href = redirectUrl;
+                    }
+                } catch (error) {
+                    console.warn('Session storage unavailable', error);
+                }
+
+            });
+        });
+
+        // ভিডিও URL
+        function getVideoUrl(path) {
+            return new URL(path, window.location.href).href;
+        }
+
+        // সাধারণ Share
+        async function shareVideo(title, path) {
+            const url = getVideoUrl(path);
+
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: title,
+                        text: title + ' দেখুন!',
+                        url: url
+                    });
+                } catch (error) {
+                    if (error.name !== 'AbortError') {
+                        alert('শেয়ার করা যায়নি। Copy Link ব্যবহার করো।');
+                    }
+                }
+            } else {
+                await copyVideoLink(path);
+            }
+        }
+
+        // WhatsApp Share
+        function shareWhatsApp(title, path) {
+            const url = getVideoUrl(path);
+
+            const text = encodeURIComponent(
+                title + '\nভিডিও দেখুন: ' + url
+            );
+
+            window.open(
+                'https://api.whatsapp.com/send?text=' + text,
+                '_blank',
+                'noopener,noreferrer'
+            );
+        }
+
+        // Facebook Share
+        function shareFacebook(path) {
+            const url = encodeURIComponent(getVideoUrl(path));
+
+            window.open(
+                'https://www.facebook.com/sharer/sharer.php?u=' + url,
+                '_blank',
+                'noopener,noreferrer'
+            );
+        }
+
+        // Copy Link
+        async function copyVideoLink(path) {
+            const url = getVideoUrl(path);
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                    alert('ভিডিও লিংক কপি হয়েছে!');
+                } else {
+                    window.prompt('ভিডিও লিংক কপি করো:', url);
+                }
+            } catch (error) {
+                window.prompt('ভিডিও লিংক কপি করো:', url);
+            }
+        }
+    </script>
+
+</body>
+</html>
